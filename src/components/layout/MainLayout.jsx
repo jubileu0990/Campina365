@@ -33,7 +33,7 @@ export default function MainLayout({ children }) {
         }}
       >
         <h2 style={{ color: "#2563eb", marginBottom: "40px" }}>
-          Campina Pulse
+          Campina365
         </h2>
 
         <nav
