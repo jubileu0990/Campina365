@@ -1,16 +1,33 @@
-# React + Vite
+# Campina365
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Plataforma de inteligência turística e comercial para Campina Grande.
 
-Currently, two official plugins are available:
+## Objetivo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+O Campina365 tem como objetivo reunir eventos, alertas, calendário turístico e informações estratégicas da cidade em uma única plataforma digital.
 
-## React Compiler
+A ideia é ajudar turistas, moradores, comerciantes, hotéis, bares, restaurantes, organizadores de eventos e gestores públicos a acompanharem o movimento da cidade durante todo o ano.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Funcionalidades iniciais
 
-## Expanding the ESLint configuration
+- Página inicial institucional
+- Calendário de eventos
+- Listagem de eventos
+- Página de alertas
+- Login de usuários
+- Cadastro de usuários
+- Estrutura preparada para expansão com inteligência artificial
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tecnologias utilizadas
+
+- React
+- Vite
+- React Router DOM
+- FullCalendar
+- CSS
+
+## Como rodar o projeto
+
+```bash
+npm install
+npm run dev

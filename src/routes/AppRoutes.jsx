@@ -12,10 +12,10 @@ export default function AppRoutes() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/events" element={<Events />} />
-        <Route path="/alerts" element={<Alerts />} />
+        <Route path="/eventos" element={<Events />} />
+        <Route path="/alertas" element={<Alerts />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/cadastro" element={<Register />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

@@ -4,30 +4,32 @@ import EventCalendar from "../../components/events/EventCalendar";
 export default function Home() {
   return (
     <MainLayout>
+      <section className="hero-section">
+        <h1>Campina365</h1>
+        <p>
+          Plataforma inteligente para acompanhar eventos, turismo, comércio e
+          oportunidades em Campina Grande durante todo o ano.
+        </p>
+      </section>
 
-      <h1
-        style={{
-          fontSize: "42px",
-          marginBottom: "10px",
-          color: "#0f172a",
-        }}
-      >
-        Agenda Turística de Campina Grande
-      </h1>
+      <section className="dashboard-cards">
+        <div className="card">
+          <h3>Eventos</h3>
+          <p>Calendário atualizado com atrações, shows, feiras e eventos da cidade.</p>
+        </div>
 
-      <p
-        style={{
-          color: "#475569",
-          marginBottom: "30px",
-          fontSize: "18px",
-        }}
-      >
-        Descubra eventos culturais, shows,
-        feiras e atrações da cidade.
-      </p>
+        <div className="card">
+          <h3>Turismo</h3>
+          <p>Informações úteis para visitantes, moradores e empreendedores locais.</p>
+        </div>
+
+        <div className="card">
+          <h3>Comércio</h3>
+          <p>Dados e oportunidades para hotéis, bares, restaurantes e lojas.</p>
+        </div>
+      </section>
 
       <EventCalendar />
-
     </MainLayout>
   );
 }
