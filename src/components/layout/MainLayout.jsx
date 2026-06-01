@@ -16,23 +16,23 @@ export default function MainLayout({ children }) {
   });
 
   return (
-    <div
-      style={{
-        display: "flex",
-        minHeight: "100vh",
-        background: "#f8fafc",
-      }}
-    >
+    <div style={{ display: "flex", minHeight: "100vh" }}>
       {/* SIDEBAR */}
       <aside
         style={{
-          width: "250px",
-          background: "#fff",
-          borderRight: "1px solid #e2e8f0",
-          padding: "25px",
+          width: "260px",
+          borderRight: "1px solid #e5e7eb",
+          padding: "32px 24px",
+          background: "#ffffff",
         }}
       >
-        <h2 style={{ color: "#2563eb", marginBottom: "40px" }}>
+        <h2
+          style={{
+            color: "#2563eb",
+            fontSize: "28px",
+            marginBottom: "48px",
+          }}
+        >
           Campina365
         </h2>
 
@@ -40,12 +40,25 @@ export default function MainLayout({ children }) {
           style={{
             display: "flex",
             flexDirection: "column",
-            gap: "20px",
+            gap: "22px",
+            fontSize: "18px",
           }}
         >
-          <NavLink to="/" style={navStyle}>Home</NavLink>
-          <NavLink to="/events" style={navStyle}>Eventos</NavLink>
-          <NavLink to="/alerts" style={navStyle}>Alertas</NavLink>
+          <NavLink to="/" style={navStyle}>
+            Home
+          </NavLink>
+
+          <NavLink to="/eventos" style={navStyle}>
+            Eventos
+          </NavLink>
+
+          <NavLink to="/adicionar-evento" style={navStyle}>
+            Adicionar Evento
+          </NavLink>
+
+          <NavLink to="/alertas" style={navStyle}>
+            Alertas
+          </NavLink>
 
           <span
             onClick={() => setOpenLogin(true)}
@@ -64,26 +77,24 @@ export default function MainLayout({ children }) {
       </aside>
 
       {/* CONTEÚDO */}
-      <div style={{ flex: 1, display: "flex", flexDirection: "column" }}>
+      <main style={{ flex: 1, background: "#f8fafc" }}>
         <header
           style={{
-            height: "70px",
-            background: "#fff",
-            borderBottom: "1px solid #e2e8f0",
+            height: "74px",
+            borderBottom: "1px solid #e5e7eb",
+            background: "#ffffff",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            padding: "0 30px",
+            padding: "0 36px",
           }}
         >
-          <h3>Painel Inteligente</h3>
-          <span>Administrador</span>
+          <h3 style={{ fontSize: "24px", margin: 0 }}>Painel Inteligente</h3>
+          <span style={{ fontSize: "18px" }}>Administrador</span>
         </header>
 
-        <main style={{ padding: "30px" }}>
-          {children}
-        </main>
-      </div>
+        <section style={{ padding: "48px 36px" }}>{children}</section>
+      </main>
 
       {/* MODALS */}
       <Modal isOpen={openLogin} onClose={() => setOpenLogin(false)}>

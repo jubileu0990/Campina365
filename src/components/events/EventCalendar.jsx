@@ -1,43 +1,50 @@
+import { useEffect, useState } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
-
-const events = [
-  {
-    title: "Maior São João do Mundo",
-    date: "2026-06-10",
-  },
-
-  {
-    title: "Festival de Inverno",
-    date: "2026-07-15",
-  },
-
-  {
-    title: "Feira de Artesanato",
-    date: "2026-08-02",
-  },
-
-  {
-    title: "Show Cultural no Parque do Povo",
-    date: "2026-06-18",
-  },
-];
+import events from "../../data/events";
 
 export default function EventCalendar() {
+  const [calendarEvents, setCalendarEvents] = useState([]);
+
+  useEffect(() => {
+    const savedEvents =
+      JSON.parse(localStorage.getItem("campina365_events")) || [];
+
+    const allEvents = [...events, ...savedEvents];
+
+    const formattedEvents = allEvents.map((event) => {
+      const start = event.startDate || event.date;
+      const end = event.endDate || event.startDate || event.date;
+
+      if (!start) {
+        return null;
+      }
+
+      const finalDate = new Date(end + "T00:00:00");
+      finalDate.setDate(finalDate.getDate() + 1);
+
+      return {
+        id: String(event.id),
+        title: event.title,
+        start: start,
+        end: finalDate.toISOString().split("T")[0],
+        allDay: true,
+      };
+    });
+
+    setCalendarEvents(formattedEvents.filter(Boolean));
+  }, []);
+
   return (
-    <div
-      style={{
-        background: "#ffffff",
-        padding: "20px",
-        borderRadius: "20px",
-        boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
-      }}
-    >
+    <div className="calendar-container">
+      <h2>Calendário de Eventos</h2>
+
       <FullCalendar
         plugins={[dayGridPlugin]}
         initialView="dayGridMonth"
+        events={calendarEvents}
+        locale="pt-br"
         height="auto"
-        events={events}
       />
     </div>
   );

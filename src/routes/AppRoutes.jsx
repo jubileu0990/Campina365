@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Events from "../pages/Events";
 import Alerts from "../pages/Alerts";
+import AddEvent from "../pages/AddEvent";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import NotFound from "../pages/NotFound";
@@ -15,6 +16,7 @@ export default function AppRoutes() {
 
         <Route path="/eventos" element={<Events />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/adicionar-evento" element={<AddEvent />} />
 
         <Route path="/alertas" element={<Alerts />} />
         <Route path="/alerts" element={<Alerts />} />
